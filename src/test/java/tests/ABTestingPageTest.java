@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ABTestingPage;
 
-public class ABTestingPageTest extends TestBase{
+public class ABTestingPageTest extends TestBase {
 
     private final ABTestingPage abTestingPage = new ABTestingPage();
 

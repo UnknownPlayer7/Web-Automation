@@ -5,7 +5,8 @@ import lombok.Getter;
 @Getter
 public enum MainPageLink {
 
-    AD_TESTING("/abtest");
+    AD_TESTING("/abtest"),
+    ADD_REMOVE_ELEMENTS("/add_remove_elements/");
 
     private final String href;
 
