@@ -27,4 +27,8 @@ public class TestBase {
     protected void addCookie(String name, String value) {
         getBrowser().getDriver().manage().addCookie(new Cookie(name, value));
     }
+
+    protected void addBasicAuthentication(String username, String password) {
+        getBrowser().network().addBasicAuthentication(MAIN_PAGE_HOST, username, password);
+    }
 }
