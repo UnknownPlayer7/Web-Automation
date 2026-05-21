@@ -1,9 +1,9 @@
-package tests;
+package ui.tests;
 
-import constants.MainPageLink;
+import ui.constants.MainPageLink;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.ContextMenuPage;
+import ui.pages.ContextMenuPage;
 
 public class ContextMenuPageTest extends TestBase {
 

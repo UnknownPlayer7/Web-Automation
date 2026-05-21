@@ -1,4 +1,4 @@
-package models;
+package ui.models;
 
 import lombok.Getter;
 

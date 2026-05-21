@@ -3,9 +3,9 @@ package utils;
 import aquality.selenium.browser.AqualityServices;
 import com.google.gson.Gson;
 import lombok.experimental.UtilityClass;
-import models.BasicAuthData;
-import models.Env;
-import models.EnvData;
+import ui.models.AuthData;
+import ui.models.Env;
+import ui.models.EnvData;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -18,7 +18,7 @@ public class SettingsTestData {
     private final String ENV_FILE_PATH = RESOURCES_FOLDER_PATH + "env.json";
 
     private final String TEST_DATA_FOLDER_PATH = RESOURCES_FOLDER_PATH + "test-data\\";
-    private final String BASIC_AUTH_DATA_FILE_PATH = TEST_DATA_FOLDER_PATH + "basic-auth-data.json";
+    private final String AUTH_DATA_FILE_PATH = TEST_DATA_FOLDER_PATH + "auth-data.json";
 
     private final String ERROR_MESSAGE = "Could not deserialize file at %s. Cause: %s";
 
@@ -39,7 +39,7 @@ public class SettingsTestData {
         }
     }
 
-    public BasicAuthData getBasicAuthData() {
-        return deserialize(BASIC_AUTH_DATA_FILE_PATH, BasicAuthData.class);
+    public AuthData getAuthData() {
+        return deserialize(AUTH_DATA_FILE_PATH, AuthData.class);
     }
 }

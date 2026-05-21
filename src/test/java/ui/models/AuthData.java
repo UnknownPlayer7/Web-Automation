@@ -1,8 +1,8 @@
-package models;
+package ui.models;
 
 import lombok.Getter;
 
 @Getter
-public class BasicAuthData {
+public class AuthData {
     private String content;
 }

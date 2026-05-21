@@ -1,10 +1,9 @@
-package tests;
+package ui.tests;
 
-import constants.MainPageLink;
+import ui.constants.MainPageLink;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.BasicAuthPage;
-import utils.SettingsTestData;
+import ui.pages.BasicAuthPage;
 
 public class BasicAuthPageTest extends TestBase{
 

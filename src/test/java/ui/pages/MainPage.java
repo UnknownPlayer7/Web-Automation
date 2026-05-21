@@ -1,8 +1,8 @@
-package pages;
+package ui.pages;
 
 import aquality.selenium.elements.interfaces.ILink;
 import aquality.selenium.forms.Form;
-import constants.MainPageLink;
+import ui.constants.MainPageLink;
 import org.openqa.selenium.By;
 
 public class MainPage extends Form {

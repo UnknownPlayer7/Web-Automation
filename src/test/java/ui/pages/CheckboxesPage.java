@@ -1,4 +1,4 @@
-package pages;
+package ui.pages;
 
 import aquality.selenium.elements.interfaces.ICheckBox;
 import aquality.selenium.forms.Form;

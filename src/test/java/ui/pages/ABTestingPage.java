@@ -1,4 +1,4 @@
-package pages;
+package ui.pages;
 
 import aquality.selenium.elements.interfaces.ILabel;
 import aquality.selenium.forms.Form;
