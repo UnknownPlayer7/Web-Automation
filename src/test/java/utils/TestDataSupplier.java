@@ -1,7 +1,7 @@
 package utils;
 
 import lombok.experimental.UtilityClass;
-import ui.models.AuthData;
+import api.models.AuthData;
 import ui.models.Env;
 import ui.models.EnvData;
 
