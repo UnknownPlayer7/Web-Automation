@@ -2,11 +2,11 @@ package api.clients;
 
 import io.restassured.RestAssured;
 import io.restassured.specification.RequestSpecification;
-import utils.SettingsTestData;
+import utils.TestDataSupplier;
 
 public class BaseApiClient {
 
-    private static final String BASE_URL = SettingsTestData.getEnvData().getHost();
+    private static final String BASE_URL = TestDataSupplier.getEnvData().getHost();
     protected RequestSpecification baseRequestSpec;
 
     public BaseApiClient() {

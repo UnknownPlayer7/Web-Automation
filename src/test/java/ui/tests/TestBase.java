@@ -4,13 +4,13 @@ import org.openqa.selenium.Cookie;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import ui.pages.MainPage;
-import utils.SettingsTestData;
+import utils.TestDataSupplier;
 
 import static aquality.selenium.browser.AqualityServices.getBrowser;
 
 public class TestBase {
 
-    private static final String MAIN_PAGE_HOST = SettingsTestData.getEnvData().getHost();
+    private static final String MAIN_PAGE_HOST = TestDataSupplier.getEnvData().getHost();
     protected final MainPage mainPage = new MainPage();
 
     @BeforeMethod
