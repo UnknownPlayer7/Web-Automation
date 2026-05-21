@@ -11,7 +11,7 @@ public class DigestAuthTest extends ApiTestBase {
 
     @Test
     public void digestAuthTest() {
-        digestAuthClient.loginWithDigest(USERNAME, PASSWORD)
+        digestAuthClient.login(USERNAME, PASSWORD)
                 .then()
                 .statusCode(200)
                 .body(containsString(CONTENT));

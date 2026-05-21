@@ -7,7 +7,7 @@ import static io.restassured.RestAssured.given;
 
 public class DigestAuthClient extends  BaseApiClient {
 
-    public Response loginWithDigest(String username, String password) {
+    public Response login(String username, String password) {
         return given(baseRequestSpec)
                 .auth()
                 .digest(username, password)
