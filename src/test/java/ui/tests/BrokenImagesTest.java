@@ -7,12 +7,12 @@ import ui.pages.BrokenImagesPage;
 
 import java.util.List;
 
-public class BrokenImagesPageTest extends TestBase {
+public class BrokenImagesTest extends TestBase {
 
     private final BrokenImagesPage brokenImagesPage = new BrokenImagesPage();
 
     @Test
-    public void brokenImagesPageTest() {
+    public void brokenImagesTest() {
         Assert.assertTrue(mainPage.state().waitForDisplayed(), "Main Page isn't displayed!");
 
         mainPage.navigateTo(MainPageLink.BROKEN_IMAGES);

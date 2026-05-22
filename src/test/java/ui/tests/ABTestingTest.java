@@ -5,12 +5,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ui.pages.ABTestingPage;
 
-public class ABTestingPageTest extends TestBase {
+public class ABTestingTest extends TestBase {
 
     private final ABTestingPage abTestingPage = new ABTestingPage();
 
     @Test
-    public void abTestingPageTest() {
+    public void abTestingTest() {
         Assert.assertTrue(mainPage.state().waitForDisplayed(), "Main Page isn't displayed!");
 
         addCookie("optimizelyOptOut", "true");

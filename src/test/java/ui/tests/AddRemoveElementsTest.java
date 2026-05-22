@@ -5,12 +5,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ui.pages.AddRemoveElementsPage;
 
-public class AddRemoveElementsPageTest extends TestBase {
+public class AddRemoveElementsTest extends TestBase {
 
     private final AddRemoveElementsPage addRemoveElementsPage = new AddRemoveElementsPage();
 
     @Test
-    public void addRemoveElementsPageTest() {
+    public void addRemoveElementsTest() {
         Assert.assertTrue(mainPage.state().waitForDisplayed(), "Main Page isn't displayed!");
 
         mainPage.navigateTo(MainPageLink.ADD_REMOVE_ELEMENTS);

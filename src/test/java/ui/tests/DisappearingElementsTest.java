@@ -7,7 +7,7 @@ import ui.pages.DisappearingElementsPage;
 import ui.pages.GalleryPage;
 import utils.TestDataSupplier;
 
-public class DisappearingElementsPageTest extends TestBase {
+public class DisappearingElementsTest extends TestBase {
 
     private static final int RETRIES = TestDataSupplier.getDisappearingElementsData().getRefreshRetries();
     private final DisappearingElementsPage disappearingElementsPage = new DisappearingElementsPage();

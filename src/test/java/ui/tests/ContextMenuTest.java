@@ -5,12 +5,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ui.pages.ContextMenuPage;
 
-public class ContextMenuPageTest extends TestBase {
+public class ContextMenuTest extends TestBase {
 
     private final ContextMenuPage contextMenuPage = new ContextMenuPage();
 
     @Test
-    public void contextMenuPageTest() {
+    public void contextMenuTest() {
         Assert.assertTrue(mainPage.state().waitForDisplayed(), "Main Page isn't displayed!");
 
         mainPage.navigateTo(MainPageLink.CONTEXT_MENU);

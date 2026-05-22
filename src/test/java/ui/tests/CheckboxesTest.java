@@ -5,12 +5,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ui.pages.CheckboxesPage;
 
-public class CheckboxesPageTest extends TestBase {
+public class CheckboxesTest extends TestBase {
 
     private final CheckboxesPage checkboxesPage = new CheckboxesPage();
 
     @Test
-    public void checkboxesPageTest() {
+    public void checkboxesTest() {
         Assert.assertTrue(mainPage.state().waitForDisplayed(), "Main Page isn't displayed!");
 
         mainPage.navigateTo(MainPageLink.CHECKBOXES);
