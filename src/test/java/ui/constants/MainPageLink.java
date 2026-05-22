@@ -10,7 +10,8 @@ public enum MainPageLink {
     BROKEN_IMAGES("/broken_images"),
     CHECKBOXES("/checkboxes"),
     CONTEXT_MENU("/context_menu"),
-    DISAPPEARING_ELEMENTS("/disappearing_elements");
+    DISAPPEARING_ELEMENTS("/disappearing_elements"),
+    DRAG_AND_DROP("/drag_and_drop");
 
     private final String href;
 
