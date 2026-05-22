@@ -5,11 +5,12 @@ import org.testng.annotations.Test;
 import ui.constants.DraggedElements;
 import ui.constants.MainPageLink;
 import ui.pages.DragAndDropPage;
+import utils.TestDataSupplier;
 
 public class DragAndDropTest extends TestBase {
 
+    private final static String TEXT_IN_COLUMN = TestDataSupplier.getDragAndDropData().getTextInColumnA();
     private final DragAndDropPage dragAndDropPage = new DragAndDropPage();
-    private final static String TEXT_IN_COLUMN = "B";
 
     @Test
     public void dragAndDropTest() {
