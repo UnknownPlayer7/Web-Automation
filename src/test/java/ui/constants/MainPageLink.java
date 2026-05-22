@@ -11,7 +11,8 @@ public enum MainPageLink {
     CHECKBOXES("/checkboxes"),
     CONTEXT_MENU("/context_menu"),
     DISAPPEARING_ELEMENTS("/disappearing_elements"),
-    DRAG_AND_DROP("/drag_and_drop");
+    DRAG_AND_DROP("/drag_and_drop"),
+    DROPDOWN("/dropdown");
 
     private final String href;
 
