@@ -1,6 +1,7 @@
 package ui.tests;
 
 import org.openqa.selenium.Cookie;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import ui.pages.MainPage;
@@ -17,6 +18,11 @@ public class TestBase {
     public void setup() {
         getBrowser().maximize();
         getBrowser().goTo(MAIN_PAGE_HOST);
+    }
+
+    @BeforeMethod
+    public void isMainPageOpenTest() {
+        Assert.assertTrue(mainPage.state().waitForDisplayed(), "The Main Page isn't displayed!");
     }
 
     @AfterMethod

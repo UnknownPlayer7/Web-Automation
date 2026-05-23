@@ -13,8 +13,6 @@ public class BrokenImagesTest extends TestBase {
 
     @Test
     public void brokenImagesTest() {
-        Assert.assertTrue(mainPage.state().waitForDisplayed(), "Main Page isn't displayed!");
-
         mainPage.navigateTo(MainPageLink.BROKEN_IMAGES);
         Assert.assertTrue(brokenImagesPage.state().waitForDisplayed(),
                 "The Broken Images Page isn't displayed!");

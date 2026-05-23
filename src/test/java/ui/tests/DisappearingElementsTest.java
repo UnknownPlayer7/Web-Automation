@@ -20,8 +20,6 @@ public class DisappearingElementsTest extends TestBase {
      */
     @Test
     public void disappearingElementsStabilityTest() {
-        Assert.assertTrue(mainPage.state().waitForDisplayed(), "Main Page isn't displayed!");
-
         mainPage.navigateTo(MainPageLink.DISAPPEARING_ELEMENTS);
         Assert.assertTrue(disappearingElementsPage.state().waitForDisplayed(),
                 "The Disappearing Elements Page isn't displayed!");

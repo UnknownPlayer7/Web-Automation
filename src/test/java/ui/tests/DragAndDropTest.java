@@ -14,8 +14,6 @@ public class DragAndDropTest extends TestBase {
 
     @Test
     public void dragAndDropTest() {
-        Assert.assertTrue(mainPage.state().waitForDisplayed(), "Main Page isn't displayed!");
-
         mainPage.navigateTo(MainPageLink.DRAG_AND_DROP);
         Assert.assertTrue(dragAndDropPage.state().waitForDisplayed(), "The Drag and Drop Page isn't displayed!");
 

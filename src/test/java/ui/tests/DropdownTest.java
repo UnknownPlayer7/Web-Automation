@@ -12,8 +12,6 @@ public class DropdownTest extends TestBase {
 
     @Test
     public void dropdownTest() {
-        Assert.assertTrue(mainPage.state().waitForDisplayed(), "Main Page isn't displayed!");
-
         mainPage.navigateTo(MainPageLink.DROPDOWN);
         Assert.assertTrue(dropdownPage.state().waitForDisplayed(), "The Dropdown Page isn't displayed!");
 

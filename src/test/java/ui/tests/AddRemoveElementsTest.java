@@ -11,8 +11,6 @@ public class AddRemoveElementsTest extends TestBase {
 
     @Test
     public void addRemoveElementsTest() {
-        Assert.assertTrue(mainPage.state().waitForDisplayed(), "Main Page isn't displayed!");
-
         mainPage.navigateTo(MainPageLink.ADD_REMOVE_ELEMENTS);
         Assert.assertTrue(addRemoveElementsPage.state().waitForDisplayed(),
                 "Add/Remove Elements Page isn't displayed!");

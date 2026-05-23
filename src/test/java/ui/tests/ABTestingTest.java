@@ -11,8 +11,6 @@ public class ABTestingTest extends TestBase {
 
     @Test
     public void abTestingTest() {
-        Assert.assertTrue(mainPage.state().waitForDisplayed(), "Main Page isn't displayed!");
-
         addCookie("optimizelyOptOut", "true");
         mainPage.navigateTo(MainPageLink.AD_TESTING);
 

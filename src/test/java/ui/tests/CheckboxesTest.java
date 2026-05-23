@@ -11,8 +11,6 @@ public class CheckboxesTest extends TestBase {
 
     @Test
     public void checkboxesTest() {
-        Assert.assertTrue(mainPage.state().waitForDisplayed(), "Main Page isn't displayed!");
-
         mainPage.navigateTo(MainPageLink.CHECKBOXES);
         Assert.assertTrue(checkboxesPage.state().waitForDisplayed(), "The Checkboxes Page isn't displayed!");
 

@@ -11,8 +11,6 @@ public class ContextMenuTest extends TestBase {
 
     @Test
     public void contextMenuTest() {
-        Assert.assertTrue(mainPage.state().waitForDisplayed(), "Main Page isn't displayed!");
-
         mainPage.navigateTo(MainPageLink.CONTEXT_MENU);
         Assert.assertTrue(contextMenuPage.state().waitForDisplayed(), "Context Menu Page isn't displayed!");
 
