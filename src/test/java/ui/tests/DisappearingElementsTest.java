@@ -1,6 +1,7 @@
 package ui.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ui.constants.MainPageLink;
 import ui.pages.DisappearingElementsPage;
@@ -13,6 +14,11 @@ public class DisappearingElementsTest extends TestBase {
     private final DisappearingElementsPage disappearingElementsPage = new DisappearingElementsPage();
     private final GalleryPage galleryPage = new GalleryPage();
 
+    @BeforeMethod
+    public void navigateToTest() {
+        super.navigateAndCheck(disappearingElementsPage, MainPageLink.DISAPPEARING_ELEMENTS);
+    }
+
     /**
      * This test verifies whether the {@code Gallery} Button is stable or not.
      * It refreshes the page several times and attempts to locate the button during each retry.
@@ -20,10 +26,6 @@ public class DisappearingElementsTest extends TestBase {
      */
     @Test
     public void disappearingElementsStabilityTest() {
-        mainPage.navigateTo(MainPageLink.DISAPPEARING_ELEMENTS);
-        Assert.assertTrue(disappearingElementsPage.state().waitForDisplayed(),
-                "The Disappearing Elements Page isn't displayed!");
-
         int failCount = 0;
         for (int i = 0; i < RETRIES; i++) {
             if (!disappearingElementsPage.isGalleryButtonDisplayed()) {
@@ -43,12 +45,6 @@ public class DisappearingElementsTest extends TestBase {
      */
     @Test
     public void disappearingElementsInteractionTest() {
-        Assert.assertTrue(mainPage.state().waitForDisplayed(), "Main Page isn't displayed!");
-
-        mainPage.navigateTo(MainPageLink.DISAPPEARING_ELEMENTS);
-        Assert.assertTrue(disappearingElementsPage.state().waitForDisplayed(),
-                "The Disappearing Elements Page isn't displayed!");
-
         boolean isGalleryButtonAppeared = false;
         for (int i = 0; i < RETRIES; i++) {
             if (disappearingElementsPage.isGalleryButtonDisplayed()) {
