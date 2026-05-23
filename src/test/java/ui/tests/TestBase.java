@@ -1,9 +1,11 @@
 package ui.tests;
 
+import aquality.selenium.forms.Form;
 import org.openqa.selenium.Cookie;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import ui.constants.MainPageLink;
 import ui.pages.MainPage;
 import utils.TestDataSupplier;
 
@@ -15,18 +17,18 @@ public class TestBase {
     protected final MainPage mainPage = new MainPage();
 
     @BeforeMethod
-    public void setup() {
+    protected void setup() {
         getBrowser().maximize();
         getBrowser().goTo(MAIN_PAGE_HOST);
     }
 
     @BeforeMethod
-    public void isMainPageOpenTest() {
+    protected void verifyMainPageIsOpened() {
         Assert.assertTrue(mainPage.state().waitForDisplayed(), "The Main Page isn't displayed!");
     }
 
     @AfterMethod
-    public void teardown() {
+    protected void teardown() {
         getBrowser().quit();
     }
 
@@ -36,5 +38,16 @@ public class TestBase {
 
     protected void addBasicAuthentication(String username, String password) {
         getBrowser().network().addBasicAuthentication(MAIN_PAGE_HOST, username, password);
+    }
+
+    /**
+     * This method navigate to the passed {@code page} and then verifies that the {@code page} is displayed
+     * @param page an instance of the extended {@link Form} class
+     * @param link an instance of the {@link MainPageLink}
+     */
+    protected void navigateAndCheck(Form page, MainPageLink link) {
+        mainPage.navigateTo(link);
+        Assert.assertTrue(page.state().waitForDisplayed(),
+                "The %s isn't displayed!".formatted(page.getName()));
     }
 }

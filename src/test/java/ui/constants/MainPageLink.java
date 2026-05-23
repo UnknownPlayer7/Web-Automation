@@ -12,7 +12,8 @@ public enum MainPageLink {
     CONTEXT_MENU("/context_menu"),
     DISAPPEARING_ELEMENTS("/disappearing_elements"),
     DRAG_AND_DROP("/drag_and_drop"),
-    DROPDOWN("/dropdown");
+    DROPDOWN("/dropdown"),
+    DYNAMIC_CONTENT("/dynamic_content");
 
     private final String href;
 
