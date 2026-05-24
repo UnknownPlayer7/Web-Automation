@@ -49,9 +49,11 @@ public abstract class TestBase {
                 "The %s isn't displayed!".formatted(page.getName()));
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     protected void teardown() {
-        getBrowser().quit();
+        if(getBrowser().isStarted()) {
+            getBrowser().quit();
+        }
     }
 
     protected void addCookie(String name, String value) {
