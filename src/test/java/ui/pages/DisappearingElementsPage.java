@@ -21,10 +21,6 @@ public class DisappearingElementsPage extends Form {
         return galleryButton.state().waitForDisplayed(Duration.ofSeconds(1));
     }
 
-    public void refreshPage() {
-        getBrowser().refresh();
-    }
-
     public void clickGalleryButton() {
         galleryButton.clickAndWait();
     }

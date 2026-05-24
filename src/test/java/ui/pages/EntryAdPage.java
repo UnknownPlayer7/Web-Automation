@@ -49,8 +49,4 @@ public class EntryAdPage extends Form {
     public boolean isEntryAdDisplayed() {
         return entryAd.state().waitForDisplayed(Duration.ofSeconds(1));
     }
-
-    public boolean isEntryAdNotDisplayed() {
-        return entryAd.state().waitForNotDisplayed();
-    }
 }

@@ -33,8 +33,4 @@ public class DynamicContentPage extends Form {
     public void enableStaticMode() {
         staticLink.click();
     }
-
-    public void refreshPage() {
-        AqualityServices.getBrowser().refresh();
-    }
 }

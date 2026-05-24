@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import ui.constants.MainPageLink;
 import ui.constants.Paragraphs;
 import ui.pages.DynamicContentPage;
+import utils.BrowserUtils;
 
 public class DynamicContentTest extends TestBase {
 
@@ -26,7 +27,7 @@ public class DynamicContentTest extends TestBase {
     @Test(dataProvider = "dynamicParagraphProvider")
     public void shouldChangeParagraphContentAfterRefresh(Paragraphs paragraph) {
         String oldParagraphText = dynamicContentPage.getParagraphText(paragraph);
-        dynamicContentPage.refreshPage();
+        BrowserUtils.refreshPage();
         String newParagraphText = dynamicContentPage.getParagraphText(paragraph);
 
         Assert.assertNotEquals(newParagraphText, oldParagraphText,
@@ -52,7 +53,7 @@ public class DynamicContentTest extends TestBase {
         dynamicContentPage.enableStaticMode();
 
         String oldParagraphText = dynamicContentPage.getParagraphText(paragraph);
-        dynamicContentPage.refreshPage();
+       BrowserUtils.refreshPage();
         String newParagraphText = dynamicContentPage.getParagraphText(paragraph);
 
         Assert.assertEquals(newParagraphText, oldParagraphText,
@@ -76,7 +77,7 @@ public class DynamicContentTest extends TestBase {
         dynamicContentPage.enableStaticMode();
 
         String oldParagraphText = dynamicContentPage.getParagraphText(Paragraphs.THIRD_PARAGRAPH);
-        dynamicContentPage.refreshPage();
+        BrowserUtils.refreshPage();
         String newParagraphText = dynamicContentPage.getParagraphText(Paragraphs.THIRD_PARAGRAPH);
 
         Assert.assertNotEquals(newParagraphText, oldParagraphText,

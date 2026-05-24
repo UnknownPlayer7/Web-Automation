@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import ui.constants.MainPageLink;
 import ui.pages.DisappearingElementsPage;
 import ui.pages.GalleryPage;
+import utils.BrowserUtils;
 import utils.TestDataSupplier;
 
 public class DisappearingElementsTest extends TestBase {
@@ -32,7 +33,7 @@ public class DisappearingElementsTest extends TestBase {
             if (!disappearingElementsPage.isGalleryButtonDisplayed()) {
                 failCount++;
             }
-            disappearingElementsPage.refreshPage();
+            BrowserUtils.refreshPage();
         }
 
         Assert.assertTrue(failCount == 0,
@@ -54,7 +55,7 @@ public class DisappearingElementsTest extends TestBase {
 
                 break;
             }
-            disappearingElementsPage.refreshPage();
+            BrowserUtils.refreshPage();
         }
 
         Assert.assertTrue(isGalleryButtonAppeared,
