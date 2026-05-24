@@ -25,7 +25,7 @@ public abstract class TestBase {
     }
 
     /**
-     * This method should contain navigation to a tested page
+     * This method should contain navigation from the {@code Main Page} to a tested page
      * and a verification that the user has been redirected to the right page.
      * Use the {@code navigateAndCheck()} method from the {@link TestBase} class:
      * <pre>
@@ -39,7 +39,9 @@ public abstract class TestBase {
     protected abstract void navigationTest();
 
     /**
-     * This method navigate to the passed {@code page} and then verifies that the {@code page} is displayed
+     * This method navigates from the {@code Main Page} to the passed {@code page}
+     * and then verifies that the {@code page} is displayed
+     *
      * @param page an instance of the extended {@link Form} class
      * @param link an instance of the {@link MainPageLink}
      */
