@@ -1,5 +1,6 @@
 package ui.tests;
 
+import org.testng.annotations.BeforeMethod;
 import ui.constants.MainPageLink;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -9,11 +10,14 @@ public class CheckboxesTest extends TestBase {
 
     private final CheckboxesPage checkboxesPage = new CheckboxesPage();
 
+    @BeforeMethod(dependsOnMethods = "setup")
+    @Override
+    protected void navigationTest() {
+        navigateAndCheck(checkboxesPage, MainPageLink.CHECKBOXES);
+    }
+
     @Test
     public void checkboxesTest() {
-        mainPage.navigateTo(MainPageLink.CHECKBOXES);
-        Assert.assertTrue(checkboxesPage.state().waitForDisplayed(), "The Checkboxes Page isn't displayed!");
-
         checkboxesPage.checkFirstCheckBox();
         checkboxesPage.uncheckSecondCheckBox();
 

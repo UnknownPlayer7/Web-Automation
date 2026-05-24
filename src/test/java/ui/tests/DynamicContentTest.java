@@ -12,9 +12,10 @@ public class DynamicContentTest extends TestBase {
 
     private final DynamicContentPage dynamicContentPage = new DynamicContentPage();
 
-    @BeforeMethod
-    public void navigateToTest() {
-        super.navigateAndCheck(dynamicContentPage, MainPageLink.DYNAMIC_CONTENT);
+    @BeforeMethod(dependsOnMethods = "setup")
+    @Override
+    protected void navigationTest() {
+        navigateAndCheck(dynamicContentPage, MainPageLink.DYNAMIC_CONTENT);
     }
 
     /**

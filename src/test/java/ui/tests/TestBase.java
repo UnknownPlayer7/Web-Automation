@@ -11,7 +11,7 @@ import utils.TestDataSupplier;
 
 import static aquality.selenium.browser.AqualityServices.getBrowser;
 
-public class TestBase {
+public abstract class TestBase {
 
     private static final String MAIN_PAGE_HOST = TestDataSupplier.getEnvData().getHost();
     protected final MainPage mainPage = new MainPage();
@@ -20,11 +20,33 @@ public class TestBase {
     protected void setup() {
         getBrowser().maximize();
         getBrowser().goTo(MAIN_PAGE_HOST);
+
+        Assert.assertTrue(mainPage.state().waitForDisplayed(), "The Main Page isn't displayed!");
     }
 
-    @BeforeMethod
-    protected void verifyMainPageIsOpened() {
-        Assert.assertTrue(mainPage.state().waitForDisplayed(), "The Main Page isn't displayed!");
+    /**
+     * This method should contain navigation to a tested page
+     * and a verification that the user has been redirected to the right page.
+     * Use the {@code navigateAndCheck()} method from the {@link TestBase} class:
+     * <pre>
+     *     Form page = new FooPage();
+     *     MainPageLink link = MainPageLink.BAR_LINK;
+     *
+     *     navigateAndCheck(page, link);
+     * </pre>
+     */
+    @BeforeMethod(dependsOnMethods = "setup")
+    protected abstract void navigationTest();
+
+    /**
+     * This method navigate to the passed {@code page} and then verifies that the {@code page} is displayed
+     * @param page an instance of the extended {@link Form} class
+     * @param link an instance of the {@link MainPageLink}
+     */
+    protected void navigateAndCheck(Form page, MainPageLink link) {
+        mainPage.navigateTo(link);
+        Assert.assertTrue(page.state().waitForDisplayed(),
+                "The %s isn't displayed!".formatted(page.getName()));
     }
 
     @AfterMethod
@@ -38,16 +60,5 @@ public class TestBase {
 
     protected void addBasicAuthentication(String username, String password) {
         getBrowser().network().addBasicAuthentication(MAIN_PAGE_HOST, username, password);
-    }
-
-    /**
-     * This method navigate to the passed {@code page} and then verifies that the {@code page} is displayed
-     * @param page an instance of the extended {@link Form} class
-     * @param link an instance of the {@link MainPageLink}
-     */
-    protected void navigateAndCheck(Form page, MainPageLink link) {
-        mainPage.navigateTo(link);
-        Assert.assertTrue(page.state().waitForDisplayed(),
-                "The %s isn't displayed!".formatted(page.getName()));
     }
 }

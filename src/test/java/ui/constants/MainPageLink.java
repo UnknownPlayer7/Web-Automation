@@ -13,7 +13,8 @@ public enum MainPageLink {
     DISAPPEARING_ELEMENTS("/disappearing_elements"),
     DRAG_AND_DROP("/drag_and_drop"),
     DROPDOWN("/dropdown"),
-    DYNAMIC_CONTENT("/dynamic_content");
+    DYNAMIC_CONTENT("/dynamic_content"),
+    DYNAMIC_CONTROLS("/dynamic_controls");
 
     private final String href;
 

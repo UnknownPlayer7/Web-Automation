@@ -14,9 +14,10 @@ public class DisappearingElementsTest extends TestBase {
     private final DisappearingElementsPage disappearingElementsPage = new DisappearingElementsPage();
     private final GalleryPage galleryPage = new GalleryPage();
 
-    @BeforeMethod
-    public void navigateToTest() {
-        super.navigateAndCheck(disappearingElementsPage, MainPageLink.DISAPPEARING_ELEMENTS);
+    @BeforeMethod(dependsOnMethods = "setup")
+    @Override
+    protected void navigationTest() {
+        navigateAndCheck(disappearingElementsPage, MainPageLink.DISAPPEARING_ELEMENTS);
     }
 
     /**
