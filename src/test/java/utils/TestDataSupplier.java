@@ -18,6 +18,7 @@ public class TestDataSupplier {
     private final Path DISAPPEARING_ELEMENTS_DATA_FILE_PATH = TEST_DATA_FOLDER_PATH.resolve("disappearing-elements-data.json");
     private final Path DRAG_AND_DROP_DATA_FILE_PATH = TEST_DATA_FOLDER_PATH.resolve("drag-and-drop-data.json");
     private final Path DYNAMIC_CONTROLS_DATA_FILE_PATH = TEST_DATA_FOLDER_PATH.resolve("dynamic-controls-data.json");
+    private final Path FILE_UPLOAD_DATA_FILE_PATH = TEST_DATA_FOLDER_PATH.resolve("file-upload-data.json");
 
     public EnvData getEnvData() {
         String currentEnvironment = "%s.json".formatted(getEnv().getEnv());
@@ -43,5 +44,9 @@ public class TestDataSupplier {
 
     public DynamicControlsData getDynamicControlsData() {
         return JsonUtils.deserialize(DYNAMIC_CONTROLS_DATA_FILE_PATH, DynamicControlsData.class);
+    }
+
+    public FileUploadData getFileUploadData() {
+        return JsonUtils.deserialize(FILE_UPLOAD_DATA_FILE_PATH, FileUploadData.class);
     }
 }
