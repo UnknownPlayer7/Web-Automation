@@ -17,7 +17,8 @@ public enum MainPageLink implements IHrefSupplier {
     DYNAMIC_LOADING("/dynamic_loading", "Dynamic Loading"),
     ENTRY_AD("/entry_ad", "Entry Ad"),
     EXIT_INTENTION("/exit_intent", "Exit Intention"),
-    FILE_UPLOAD("/upload", "File Upload");
+    FILE_UPLOAD("/upload", "File Upload"),
+    FILE_DOWNLOAD("/download", "File Download");
 
     private final String href;
     private final String linkName;

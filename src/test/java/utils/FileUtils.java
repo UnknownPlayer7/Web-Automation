@@ -1,11 +1,15 @@
 package utils;
 
 import lombok.experimental.UtilityClass;
+import org.awaitility.Awaitility;
+import org.awaitility.core.ConditionTimeoutException;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.Duration;
 
 import static aquality.selenium.browser.AqualityServices.getLogger;
 
@@ -21,6 +25,7 @@ public class FileUtils {
 
     private final int DELETE_FILE_RETRIES = 3;
     private final int DELETE_FILE_RETRIES_POLLING = 200;
+    private final int EXISTING_FILE_WAIT_TIMEOUT = 10;
 
     public void createFile(Path path) {
         try {
@@ -59,5 +64,15 @@ public class FileUtils {
             Thread.currentThread().interrupt();
             throw new RuntimeException(e);
         }
+    }
+
+    public boolean isFileExists(Path path) {
+        File file = path.toFile();
+        try {
+            Awaitility.await().atMost(Duration.ofSeconds(EXISTING_FILE_WAIT_TIMEOUT)).until(file::exists);
+        } catch (ConditionTimeoutException e) {
+            return false;
+        }
+        return true;
     }
 }
