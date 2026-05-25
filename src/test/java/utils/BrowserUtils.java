@@ -1,6 +1,5 @@
 package utils;
 
-import aquality.selenium.browser.AqualityServices;
 import lombok.experimental.UtilityClass;
 
 import static aquality.selenium.browser.AqualityServices.getBrowser;
@@ -10,5 +9,17 @@ public class BrowserUtils {
 
     public void refreshPage() {
         getBrowser().refresh();
+    }
+
+    public void imitateMouseMoveBeyondViewPort() {
+        getBrowser().executeScript("""
+                var event = new MouseEvent('mouseleave', {
+                    bubbles: true,
+                    cancelable: true,
+                    clientY: -10
+                });
+                
+                document.documentElement.dispatchEvent(event);
+                """);
     }
 }
