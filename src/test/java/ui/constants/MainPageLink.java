@@ -18,7 +18,8 @@ public enum MainPageLink implements IHrefSupplier {
     ENTRY_AD("/entry_ad", "Entry Ad"),
     EXIT_INTENTION("/exit_intent", "Exit Intention"),
     FILE_UPLOAD("/upload", "File Upload"),
-    FILE_DOWNLOAD("/download", "File Download");
+    FILE_DOWNLOAD("/download", "File Download"),
+    FLOATING_MENU("/floating_menu", "Floating Menu");
 
     private final String href;
     private final String linkName;
