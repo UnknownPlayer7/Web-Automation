@@ -8,6 +8,7 @@
       "capabilities": {
       },
       "options": {
+        "profile.password_manager_leak_detection": false,
         "intl.accept_languages": "en",
         "safebrowsing.enabled": "true",
         "profile.default_content_settings.popups": "0",

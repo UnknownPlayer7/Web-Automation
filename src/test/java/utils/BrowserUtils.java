@@ -1,5 +1,6 @@
 package utils;
 
+import aquality.selenium.browser.AlertActions;
 import aquality.selenium.elements.interfaces.IElement;
 import lombok.experimental.UtilityClass;
 import org.openqa.selenium.WebElement;
@@ -12,6 +13,10 @@ import static aquality.selenium.browser.AqualityServices.getBrowser;
 
 @UtilityClass
 public class BrowserUtils {
+
+    public void navigateTo(String url) {
+        getBrowser().goTo(url);
+    }
 
     public void refreshPage() {
         getBrowser().refresh();
