@@ -13,12 +13,16 @@ public class JsonUtils {
 
     private final String ERROR_MESSAGE = "Could not deserialize file at %s. Cause: %s";
 
-    public  <T> T deserialize(Path path, Class<T> tClass) {
+    public  <T> T deserializeFile(Path path, Class<T> tClass) {
         try(FileReader reader = new FileReader(path.toFile())) {
             return new Gson().fromJson(reader, tClass);
         } catch (IOException e) {
             AqualityServices.getLogger().error(ERROR_MESSAGE.formatted(path, e));
             throw new RuntimeException(ERROR_MESSAGE.formatted(path, e));
         }
+    }
+
+    public <T> T deserialize(String json, Class<T> tClass) {
+        return new Gson().fromJson(json, tClass);
     }
 }

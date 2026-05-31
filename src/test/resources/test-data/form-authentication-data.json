@@ -1,0 +1,5 @@
+{
+  "errorMessage": "Your username is invalid!",
+  "successMessage": "You logged into a secure area!",
+  "logoutMessage": "You logged out of the secure area!"
+}
