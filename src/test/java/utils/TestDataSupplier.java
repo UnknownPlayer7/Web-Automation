@@ -3,6 +3,7 @@ package utils;
 import lombok.experimental.UtilityClass;
 import api.models.AuthData;
 import ui.models.*;
+import utils.models.Position;
 
 import java.nio.file.Path;
 
@@ -20,6 +21,7 @@ public class TestDataSupplier {
     private final Path DYNAMIC_CONTROLS_DATA_FILE_PATH = TEST_DATA_FOLDER_PATH.resolve("dynamic-controls-data.json");
     private final Path FILE_UPLOAD_DATA_FILE_PATH = TEST_DATA_FOLDER_PATH.resolve("file-upload-data.json");
     private final Path FORM_AUTHENTICATION_DATA_FILE_PATH = TEST_DATA_FOLDER_PATH.resolve("form-authentication-data.json");
+    private final Path GEOLOCATION_DATA_FILE_PATH = TEST_DATA_FOLDER_PATH.resolve("geolocation-data.json");
 
     public EnvData getEnvData() {
         String currentEnvironment = "%s.json".formatted(getEnv().getEnv());
@@ -63,5 +65,9 @@ public class TestDataSupplier {
     public LoginData[][] getInvalidCredentials() {
         String json = System.getenv("INVALID_CREDENTIALS_JSON");
         return JsonUtils.deserialize(json, LoginData[][].class);
+    }
+
+    public static Position[][] getGeolocationData() {
+        return JsonUtils.deserializeFile(GEOLOCATION_DATA_FILE_PATH, Position[][].class);
     }
 }

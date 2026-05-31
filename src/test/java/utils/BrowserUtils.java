@@ -4,6 +4,7 @@ import aquality.selenium.elements.interfaces.IElement;
 import interfaces.IHasFrames;
 import lombok.experimental.UtilityClass;
 import org.openqa.selenium.WebElement;
+import utils.models.Position;
 import utils.models.Rectangle;
 import utils.models.ValidationResult;
 
@@ -93,5 +94,19 @@ public class BrowserUtils {
         double right = map.get("right").doubleValue();
 
         return new Rectangle(top, left, bottom, right);
+    }
+
+    public Position getCurrentPosition() {
+        Position position = GeolocationUtils.getCurrentPosition();
+        if (position.getError() != null) {
+            throw new RuntimeException(position.getError());
+        }
+        return position;
+    }
+
+    public void emulatePosition(Position position) {
+        getBrowser().devTools()
+                .emulation()
+                .setGeolocationOverride(position.getLatitude(), position.getLongitude(), 1);
     }
 }

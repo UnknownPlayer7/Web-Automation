@@ -22,7 +22,8 @@ public enum MainPageLink implements IHrefSupplier {
     FLOATING_MENU("/floating_menu", "Floating Menu"),
     FORGOT_PASSWORD("/forgot_password", "Forgot Password"),
     FORM_AUTHENTICATION("/login", "Form Authentication"),
-    FRAMES("/frames", "Frames");
+    FRAMES("/frames", "Frames"),
+    GEOLOCATION("/geolocation", "Geolocation");
 
     private final String href;
     private final String linkName;
