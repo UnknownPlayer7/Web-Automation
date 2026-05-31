@@ -1,7 +1,7 @@
 package utils;
 
-import aquality.selenium.browser.AlertActions;
 import aquality.selenium.elements.interfaces.IElement;
+import interfaces.IHasFrames;
 import lombok.experimental.UtilityClass;
 import org.openqa.selenium.WebElement;
 import utils.models.Rectangle;
@@ -20,6 +20,18 @@ public class BrowserUtils {
 
     public void refreshPage() {
         getBrowser().refresh();
+    }
+
+    public void switchTo(IHasFrames frame) {
+        getBrowser().getDriver().switchTo().frame(frame.getFrameName());
+    }
+
+    public void switchToParentFrame() {
+        getBrowser().getDriver().switchTo().parentFrame();
+    }
+
+    public void switchToDefaultContent() {
+        getBrowser().getDriver().switchTo().defaultContent();
     }
 
     public void imitateMouseMoveBeyondViewPort() {

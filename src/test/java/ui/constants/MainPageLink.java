@@ -21,7 +21,8 @@ public enum MainPageLink implements IHrefSupplier {
     FILE_DOWNLOAD("/download", "File Download"),
     FLOATING_MENU("/floating_menu", "Floating Menu"),
     FORGOT_PASSWORD("/forgot_password", "Forgot Password"),
-    FORM_AUTHENTICATION("/login", "Form Authentication");
+    FORM_AUTHENTICATION("/login", "Form Authentication"),
+    FRAMES("/frames", "Frames");
 
     private final String href;
     private final String linkName;
