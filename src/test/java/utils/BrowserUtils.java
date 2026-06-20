@@ -109,4 +109,9 @@ public class BrowserUtils {
                 .emulation()
                 .setGeolocationOverride(position.getLatitude(), position.getLongitude(), 1);
     }
+
+    public String getCurrentEndpoint() {
+        String host = TestDataSupplier.getEnvData().getHost();
+        return getBrowser().getCurrentUrl().replace(host,"").trim();
+    }
 }

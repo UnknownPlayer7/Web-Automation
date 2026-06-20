@@ -1,0 +1,26 @@
+[
+  [
+    {
+      "userLabel": "name: user1",
+      "userLinkText": "View profile",
+      "userIndex": 0,
+      "endpoint": "/users/1"
+    }
+  ],
+  [
+    {
+      "userLabel": "name: user2",
+      "userLinkText": "View profile",
+      "userIndex": 1,
+      "endpoint": "/users/2"
+    }
+  ],
+  [
+    {
+      "userLabel": "name: user3",
+      "userLinkText": "View profile",
+      "userIndex": 2,
+      "endpoint": "/users/3"
+    }
+  ]
+]

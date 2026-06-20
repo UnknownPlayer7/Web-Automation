@@ -24,7 +24,8 @@ public enum MainPageLink implements IHrefSupplier {
     FORM_AUTHENTICATION("/login", "Form Authentication"),
     FRAMES("/frames", "Frames"),
     GEOLOCATION("/geolocation", "Geolocation"),
-    HORIZONTAL_SLIDER("/horizontal_slider", "Horizontal Slider");
+    HORIZONTAL_SLIDER("/horizontal_slider", "Horizontal Slider"),
+    HOVERS("/hovers", "Hovers");
 
     private final String href;
     private final String linkName;
