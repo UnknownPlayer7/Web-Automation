@@ -22,6 +22,7 @@ public class TestDataSupplier {
     private final Path FILE_UPLOAD_DATA_FILE_PATH = TEST_DATA_FOLDER_PATH.resolve("file-upload-data.json");
     private final Path FORM_AUTHENTICATION_DATA_FILE_PATH = TEST_DATA_FOLDER_PATH.resolve("form-authentication-data.json");
     private final Path GEOLOCATION_DATA_FILE_PATH = TEST_DATA_FOLDER_PATH.resolve("geolocation-data.json");
+    private final Path SLIDER_BAR_DATA_FILE_PATH = TEST_DATA_FOLDER_PATH.resolve("slider-bar-data.json");
 
     public EnvData getEnvData() {
         String currentEnvironment = "%s.json".formatted(getEnv().getEnv());
@@ -55,6 +56,10 @@ public class TestDataSupplier {
 
     public FormAuthenticationData getFormAuthenticationData() {
         return JsonUtils.deserializeFile(FORM_AUTHENTICATION_DATA_FILE_PATH, FormAuthenticationData.class);
+    }
+
+    public SliderBarData getSliderBarData() {
+        return JsonUtils.deserializeFile(SLIDER_BAR_DATA_FILE_PATH, SliderBarData.class);
     }
 
     public LoginData[][] getValidCredentials() {
